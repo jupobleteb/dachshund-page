@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club de las Salchichas 🌭 — Todo sobre los perros salchicha</title>
+  <meta name="description" content="Página tierna e informativa sobre perros salchicha (dachshund): historia, salud, trivia y un mini-juego. Hecha para compartir con amigos." />
+  <meta name="theme-color" content="#fbf1de" />
+  <!-- Previsualización al compartir el enlace -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Club de las Salchichas 🌭" />
+  <meta property="og:description" content="Todo sobre los perros salchicha: historia, salud, una trivia con nivel para veterinarios y un mini-juego donde tu perro se hace más largo." />
+  <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌭</text></svg>" />
+</head>
+<body>
+
+  <!-- Length-o-meter: salchicha que se estira con el scroll -->
+  <div class="lengthometer" id="lengthometer" aria-hidden="true">
+    <div class="lengthometer__track">
+      <div class="lengthometer__fill" id="lengthFill">
+        <span class="lengthometer__nose"></span>
+      </div>
+    </div>
+    <span class="lengthometer__label" id="lengthLabel">0 salchichas recorridas</span>
+  </div>
+
+  <!-- Navegación -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="nav__brand">🌭 Club de las Salchichas</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks">
+      <a href="#raza">La Raza</a>
+      <a href="#salud">Salud</a>
+      <a href="#trivia">Trivia</a>
+      <a href="#juego">Juego</a>
+      <a href="#datos">Datos</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__content">
+      <p class="hero__kicker">corto de patas · largo de corazón</p>
+      <h1 class="hero__title">Todo sobre los<br><span>perros salchicha</span></h1>
+      <p class="hero__sub">Historia, salud, una trivia para presumir y un mini-juego donde tu perro se hace más y más largo. Para dueños orgullosos y futuros enamorados de la raza.</p>
+      <div class="hero__cta">
+        <a href="#trivia" class="btn btn--primary">Hacer la trivia</a>
+        <a href="#juego" class="btn btn--ghost">Jugar 🌭</a>
+      </div>
+    </div>
+    <div class="hero__dog">
+      <!-- Salchicha estrella del hero (SVG dibujado a mano) -->
+      <svg viewBox="0 0 540 184" class="dog-svg" role="img" aria-label="Ilustración de un perro salchicha estirado">
+        <ellipse cx="280" cy="172" rx="220" ry="10" fill="rgba(58,42,32,.10)"/>
+        <!-- cola -->
+        <path d="M84 96 Q50 80 58 50" fill="none" stroke="#b0743f" stroke-width="14" stroke-linecap="round"/>
+        <!-- patas traseras -->
+        <path d="M108 118 L102 162" stroke="#9c5f33" stroke-width="14" stroke-linecap="round"/>
+        <circle cx="102" cy="164" r="7" fill="#8a5329"/>
+        <path d="M138 120 L134 162" stroke="#a86b3c" stroke-width="14" stroke-linecap="round"/>
+        <circle cx="134" cy="164" r="7" fill="#8a5329"/>
+        <!-- patas delanteras -->
+        <path d="M330 120 L326 162" stroke="#9c5f33" stroke-width="14" stroke-linecap="round"/>
+        <circle cx="326" cy="164" r="7" fill="#8a5329"/>
+        <path d="M362 118 L360 162" stroke="#a86b3c" stroke-width="14" stroke-linecap="round"/>
+        <circle cx="360" cy="164" r="7" fill="#8a5329"/>
+        <!-- cuerpo largo -->
+        <circle cx="106" cy="100" r="33" fill="#b0743f"/>
+        <rect x="88" y="68" width="282" height="60" rx="30" fill="#b0743f"/>
+        <circle cx="360" cy="100" r="31" fill="#b0743f"/>
+        <rect x="98" y="73" width="266" height="22" rx="11" fill="#c6905a"/>
+        <!-- collar -->
+        <rect x="378" y="66" width="10" height="64" rx="5" fill="#e4572e"/>
+        <circle cx="383" cy="120" r="6" fill="#f4a52a"/>
+        <!-- cabeza -->
+        <circle cx="422" cy="78" r="35" fill="#b0743f"/>
+        <!-- oreja caída -->
+        <ellipse cx="400" cy="86" rx="14" ry="31" fill="#7d4a25" transform="rotate(14 400 86)"/>
+        <!-- hocico -->
+        <rect x="436" y="74" width="50" height="27" rx="13" fill="#c6905a"/>
+        <circle cx="486" cy="86" r="8" fill="#34251c"/>
+        <!-- ojo -->
+        <circle cx="420" cy="70" r="5" fill="#241913"/>
+        <circle cx="422" cy="68" r="1.7" fill="#fff"/>
+        <!-- boca -->
+        <path d="M462 96 q8 4 16 1" fill="none" stroke="#34251c" stroke-width="2" stroke-linecap="round"/>
+        <!-- mejilla -->
+        <circle cx="404" cy="92" r="6" fill="rgba(228,87,46,.22)"/>
+      </svg>
+    </div>
+    <a href="#raza" class="hero__scroll" aria-label="Bajar">↓</a>
+  </section>
+
+  <!-- LA RAZA -->
+  <section class="section" id="raza">
+    <div class="section__head">
+      <h2>Conoce a la raza</h2>
+      <p>El dachshund nació para una misión muy concreta… y su cuerpo lo cuenta todo.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card__emoji">🦡</div>
+        <h3>Cazadores de tejones</h3>
+        <p>"Dachshund" significa literalmente <em>perro-tejón</em> en alemán (<strong>Dachs</strong> = tejón, <strong>Hund</strong> = perro). Su cuerpo bajo y alargado fue diseñado para meterse en madrigueras.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__emoji">🇩🇪</div>
+        <h3>Origen alemán</h3>
+        <p>La raza se desarrolló en Alemania hace siglos. Esas patas cortitas no son un accidente: son el resultado de criar perros valientes que cupieran bajo tierra.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__emoji">🧥</div>
+        <h3>Tres pelajes</h3>
+        <p>Vienen en <strong>liso</strong>, <strong>largo</strong> y <strong>duro</strong> (wirehaired). Cada uno con su personalidad y su rutina de cepillado.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__emoji">📏</div>
+        <h3>Dos tamaños</h3>
+        <p>Estándar y miniatura. (En algunos estándares europeos existe además el tamaño "conejo", el más pequeño de todos.)</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="trail" aria-hidden="true">
+    <svg viewBox="0 0 44 100" width="44" height="100" fill="#b0743f">
+      <line x1="22" y1="2" x2="22" y2="98" stroke="#b0743f" stroke-width="3" stroke-dasharray="1 10" stroke-linecap="round" opacity=".4"/>
+      <g opacity=".5">
+        <g transform="translate(12 20)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+        <g transform="translate(32 50)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+        <g transform="translate(12 80)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- SALUD -->
+  <section class="section section--mint" id="salud">
+    <div class="section__head">
+      <h2>Salud y cuidados 💚</h2>
+      <p>Una espalda larga es adorable, pero pide cuidados. Esto es lo que de verdad importa.</p>
+    </div>
+
+    <div class="health">
+      <div class="health__warn reveal">
+        <span class="health__warn-icon">⚠️</span>
+        <div>
+          <h3>Cuida su columna (IVDD)</h3>
+          <p>La <strong>enfermedad del disco intervertebral</strong> es el problema #1 de la raza. Su espalda larga sufre con los saltos y el sobrepeso. Señales de alerta: temblores, no querer moverse o quejarse al ser tocado → <strong>al veterinario sin demora</strong>.</p>
+        </div>
+      </div>
+
+      <ul class="tips">
+        <li class="reveal"><span>🛋️</span><div><strong>Menos saltos.</strong> Pon rampas o escaleritas en el sofá y la cama. Saltar desde altura castiga sus discos.</div></li>
+        <li class="reveal"><span>⚖️</span><div><strong>Peso ideal.</strong> El sobrepeso es el enemigo silencioso de su espalda. Una cintura visible es buena señal.</div></li>
+        <li class="reveal"><span>🚶</span><div><strong>Ejercicio moderado.</strong> Paseos regulares sí; escaleras en exceso y carreras locas, mejor con cuidado.</div></li>
+        <li class="reveal"><span>🤲</span><div><strong>Cárgalo bien.</strong> Sostén el pecho y los cuartos traseros a la vez. Nunca lo levantes solo por delante "colgando".</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="trail" aria-hidden="true">
+    <svg viewBox="0 0 44 100" width="44" height="100" fill="#b0743f">
+      <line x1="22" y1="2" x2="22" y2="98" stroke="#b0743f" stroke-width="3" stroke-dasharray="1 10" stroke-linecap="round" opacity=".4"/>
+      <g opacity=".5">
+        <g transform="translate(12 20)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+        <g transform="translate(32 50)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+        <g transform="translate(12 80)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- TRIVIA -->
+  <section class="section section--sky" id="trivia">
+    <div class="section__head">
+      <h2>Trivia salchichera 🧠</h2>
+      <p>Cada acierto estira a tu perro. ¿Qué tan largo terminará tu salchicha?</p>
+    </div>
+    <div id="trivia-app" class="trivia"></div>
+  </section>
+
+  <div class="trail" aria-hidden="true">
+    <svg viewBox="0 0 44 100" width="44" height="100" fill="#b0743f">
+      <line x1="22" y1="2" x2="22" y2="98" stroke="#b0743f" stroke-width="3" stroke-dasharray="1 10" stroke-linecap="round" opacity=".4"/>
+      <g opacity=".5">
+        <g transform="translate(12 20)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+        <g transform="translate(32 50)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+        <g transform="translate(12 80)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- JUEGO -->
+  <section class="section section--butter" id="juego">
+    <div class="section__head">
+      <h2>Salta Salchicha 🎮</h2>
+      <p>Salta los obstáculos y come premios… pero ojo: cada premio te hace <strong>más largo</strong> y más difícil de maniobrar.</p>
+    </div>
+    <div class="game">
+      <div class="game__hud">
+        <span>Puntos: <strong id="gameScore">0</strong></span>
+        <span>Multi: <strong id="gameMult">x1.0</strong></span>
+        <span>Combo: <strong id="gameCombo">0</strong></span>
+        <span>Largo: <strong id="gameLength">1.0×</strong></span>
+        <span>Récord: <strong id="gameBest">0</strong></span>
+        <button id="gameMute" class="game__mute" aria-label="Silenciar sonido">🔊</button>
+      </div>
+      <canvas id="game-canvas" width="800" height="300" aria-label="Juego del perro salchicha"></canvas>
+      <p class="game__hint">Toca la pantalla o pulsa <strong>espacio / ↑</strong> para saltar</p>
+    </div>
+  </section>
+
+  <div class="trail" aria-hidden="true">
+    <svg viewBox="0 0 44 100" width="44" height="100" fill="#b0743f">
+      <line x1="22" y1="2" x2="22" y2="98" stroke="#b0743f" stroke-width="3" stroke-dasharray="1 10" stroke-linecap="round" opacity=".4"/>
+      <g opacity=".5">
+        <g transform="translate(12 20)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+        <g transform="translate(32 50)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+        <g transform="translate(12 80)"><ellipse cx="0" cy="0" rx="3.4" ry="4"/><circle cx="-4.5" cy="-3.5" r="1.5"/><circle cx="0" cy="-6" r="1.5"/><circle cx="4.5" cy="-3.5" r="1.5"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- DATOS -->
+  <section class="section" id="datos">
+    <div class="section__head">
+      <h2>Datos curiosos ✨</h2>
+      <p>Para presumir en la próxima reunión de dueños.</p>
+    </div>
+    <div class="facts">
+      <div class="fact reveal"><span>🥇</span><p>El primer mascota oficial de unos Juegos Olímpicos fue un dachshund llamado <strong>Waldi</strong> (Múnich 1972).</p></div>
+      <div class="fact reveal"><span>🏁</span><p>Existen <strong>carreras de salchichas</strong> ("Wiener Nationals") donde decenas de ellos corren cortitos pero felices.</p></div>
+      <div class="fact reveal"><span>🎨</span><p>Vienen en muchísimos colores y patrones, incluido el moteado <strong>"dapple"</strong>.</p></div>
+      <div class="fact reveal"><span>💪</span><p>Pese a su tamaño, son <strong>valientes y testarudos</strong>: fueron criados para enfrentar tejones bajo tierra.</p></div>
+      <div class="fact reveal"><span>🎨</span><p>Picasso tuvo un salchicha llamado <strong>Lump</strong> que aparece en varias de sus obras. Andy Warhol y David Hockney también cayeron rendidos.</p></div>
+      <div class="fact reveal"><span>🎂</span><p>Una salchicha llamada <strong>Chanel</strong> fue uno de los perros más longevos del mundo: ¡vivió 21 años! (Guinness, 2009).</p></div>
+      <div class="fact reveal"><span>🔊</span><p>Su ladrido es sorprendentemente <strong>grave y potente</strong> para su tamaño: así el cazador podía oírlos aunque estuvieran bajo tierra.</p></div>
+      <div class="fact reveal"><span>👃</span><p>Tienen un <strong>olfato excelente</strong> y son de las razas más pequeñas criadas para cazar rastreando.</p></div>
+      <div class="fact reveal"><span>🕳️</span><p>Les encanta <strong>excavar y enterrarse</strong>: si tu salchicha se mete bajo las mantas, es puro instinto de madriguera.</p></div>
+      <div class="fact reveal"><span>🇩🇪</span><p>En su Alemania natal se les llama cariñosamente <strong>"Dackel"</strong> o <strong>"Teckel"</strong>.</p></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <svg viewBox="0 0 300 70" class="footer__dog" aria-hidden="true">
+      <rect x="40" y="28" width="180" height="26" rx="13" fill="#bd824c"/>
+      <rect x="55" y="50" width="10" height="18" rx="5" fill="#9c5f33"/>
+      <rect x="190" y="50" width="10" height="18" rx="5" fill="#9c5f33"/>
+      <circle cx="232" cy="34" r="18" fill="#bd824c"/>
+      <rect x="240" y="32" width="26" height="14" rx="7" fill="#c79059"/>
+      <circle cx="264" cy="40" r="4" fill="#3a2a20"/>
+      <path d="M28 40 Q14 32 18 18" fill="none" stroke="#bd824c" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+    <p>Hecho con 🌭 para dueños de salchichas. Comparte con un amigo que necesite más perros largos en su vida.</p>
+    <p class="footer__small">Página informativa de fans · No reemplaza la opinión de tu veterinario.</p>
+  </footer>
+
+  <script src="js/trivia.js" defer></script>
+  <script src="js/game.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
